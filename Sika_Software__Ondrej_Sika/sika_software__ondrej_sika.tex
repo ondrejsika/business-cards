@@ -1,0 +1,35 @@
+% Business cards
+%
+% - author: Ondrej Sika <ondrej@ondrejsika.com>
+% - license: MIT
+%
+
+\documentclass[11pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[zw32010,crossmark]{ticket}
+
+\renewcommand{\ticketdefault}{}
+\newcommand{\vcard}[4]{\ticket{
+    % size 85x54
+    \put(10, 37){\tt \LARGE #1}
+    \put(10, 22){\tt #2}
+    \put(10, 17){\tt #3}
+    \put(10, 12){\tt #4}
+}}
+
+\newcounter{numcards}
+\begin{document}
+
+\setcounter{numcards}{0}
+
+\whiledo{\thenumcards<10}{
+  \stepcounter{numcards}
+  \vcard
+  {Sika Software}
+  {{\bf Ondrej Sika}, CEO}
+  {ondrej@sikasw.cz}
+  {www.sikasw.cz}
+}
+
+\end{document}
+
