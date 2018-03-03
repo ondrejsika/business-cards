@@ -1,0 +1,34 @@
+% PGP cards
+%
+% - author: Ondrej Sika <ondrej@ondrejsika.com>
+% - license: MIT
+%
+
+\documentclass[11pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[zw32010,crossmark]{ticket}
+
+\renewcommand{\ticketdefault}{}
+\newcommand{\vcard}[4]{\ticket{
+    % size 85x54
+    \put(10, 37){\tt \LARGE #1}
+    \put(10, 26){\tt #2}
+    \put(10, 17){\tt \bf #3}
+    \put(10, 12){\tt \bf #4}
+}}
+
+\newcounter{numcards}
+\begin{document}
+
+\setcounter{numcards}{0}
+
+\whiledo{\thenumcards<10}{
+  \stepcounter{numcards}
+  \vcard
+  {Ondrej Sika}
+  {ondrej@ondrejsika.com}
+  {B000 780A 20CF 1013 F7A5 }{9081 775D 8A02 0903 EF6B}
+}
+
+\end{document}
+
