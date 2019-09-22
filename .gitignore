@@ -6,4 +6,6 @@
 *.synctex.gz
 
 *.swp
+.DS_Store
+.vscode
 
